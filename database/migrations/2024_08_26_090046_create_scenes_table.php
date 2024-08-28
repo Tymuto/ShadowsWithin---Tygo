@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('title');
             $table->string('description');
-            $table->string('response');
+            $table->unsignedBigInteger('parent_id');
+            $table->string('button_text');
             $table->timestamps();
         });
     }
