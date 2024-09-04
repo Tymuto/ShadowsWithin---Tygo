@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
             $table->unsignedBigInteger('parent_id');
+            $table->foreign('redirect_id')->references('id')->on('scenes');
             $table->string('button_text');
             $table->timestamps();
         });
