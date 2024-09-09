@@ -9,7 +9,7 @@
 <body class="text-center mt-5">
     <div class="container">
         <h1>Welkom bij het Avontuur!</h1>
-        
+
         @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
@@ -17,6 +17,12 @@
         @endif
 
         <p>Klik op de knop hieronder om je avontuur te beginnen.</p>
+
+
+        <form method="POST" action="{{ route('game.instructions') }}">
+            @csrf
+            <button type="submit" class="btn btn-success btn-lg">Show instructions</button>
+        </form>
 
         <form method="POST" action="{{ route('game.start') }}">
             @csrf

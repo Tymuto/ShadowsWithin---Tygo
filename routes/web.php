@@ -16,3 +16,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [SceneController::class, 'index'])->name('game.index');
 Route::post('/start', [SceneController::class, 'start'])->name('game.start');
+Route::post('/instructions', [SceneController::class, 'instructions'])->name('game.instructions');
