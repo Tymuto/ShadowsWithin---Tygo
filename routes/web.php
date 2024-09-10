@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [SceneController::class, 'index'])->name('game.index');d3
+
