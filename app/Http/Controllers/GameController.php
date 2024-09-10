@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class GameController extends Controller
 {
+    public function showStartPage(Request $request)
+    {
+        return view('game.start', ['showInstructions' => $request->query('show_instructions') === 'true']);
+    }
+
     public function showScene($id)
     {
         $scene = Scene::with('choices')->findOrFail($id);

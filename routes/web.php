@@ -17,5 +17,6 @@ use App\Http\Controllers\GameController;
 Route::get('/', function () {
     return view('game.start'); // Render a welcome page
 });
+Route::get('/instructions', [GameController::class, 'showStartPage'])->name('game.start');
 Route::get('/game/{id}', [GameController::class, 'showScene'])->name('game.scene'); // Route to display a specific scene
 Route::get('/game/{scene_id}/hint', [GameController::class, 'showHint'])->name('game.hint'); // Route to get a hint for the scene
