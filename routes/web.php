@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\SceneController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\GameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('game.start'); // Render a welcome page
 });
+Route::get('/game/{id}', [GameController::class, 'showScene'])->name('game.scene'); // Route to display a specific scene
+Route::get('/game/{scene_id}/hint', [GameController::class, 'showHint'])->name('game.hint'); // Route to get a hint for the scene
