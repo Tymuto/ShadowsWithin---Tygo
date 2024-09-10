@@ -11,7 +11,7 @@
 <h2>What will you do?</h2>
 <ul>
     @foreach($scene->choices as $choice)
-        <li><a href="{{ route('adventure.scene', $choice->next_scene_id) }}">{{ $choice->text }}</a></li>
+        <li><a href="{{ route('game.scene', $choice->next_scene_id) }}">{{ $choice->text }}</a></li>
     @endforeach
 </ul>
 
@@ -20,7 +20,7 @@
 
 <script>
     document.getElementById('hintButton').addEventListener('click', function() {
-        fetch(`/adventure/{{ $scene->id }}/hint`, {
+        fetch(`/game/{{ $scene->id }}/hint`, {
             headers: {
                 'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
             }
