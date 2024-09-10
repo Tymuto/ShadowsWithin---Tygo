@@ -1,4 +1,3 @@
-// resources/views/adventure/scene.blade.php
 <!DOCTYPE html>
 <html>
 <head>
