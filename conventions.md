@@ -28,11 +28,7 @@ Dit document beschrijft de conventies die ik gebruik binnen mijn Laravel-project
 - **Blade Componenten** gebruiken een samengestelde naam met streepjes (bijv. `alert-message.blade.php`).
 - **Routes** gebruiken `snake_case` voor route-namen (bijv. `user_profile`).
 
-### 3. Commentaar
-- Voeg duidelijke docblocks toe aan elke klasse, methode en functie.
-- Functies en methodes moeten voorzien zijn van een docstring die beschrijft wat ze doen, welke parameters verwacht worden en wat de return-waarde is.
-
-### 4. Controllers en Methods
+### 3. Controllers en Methods
 - Houd controllers klein en doelgericht. Gebruik services of repositories voor complexe logica.
 - Gebruik RESTful methoden (index, show, create, store, edit, update, destroy) in controllers.
 - Beperk het aantal regels in methodes. Wanneer een methode te groot wordt, overweeg dan om een aparte service of helper-klasse te maken.

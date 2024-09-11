@@ -26,5 +26,23 @@ class GameController extends Controller
         $hint = Hint::where('scene_id', $scene_id)->first();
         return response()->json(['hint' => $hint ? $hint->hint : 'No hint available for this scene.']);
     }
+
+    public function saveProgress(Request $request, $scene_id)
+    {
+        // Save the current scene ID to session
+        $request->session()->put('current_scene', $scene_id);
+
+        // Redirect to start page or show a message
+        return redirect()->route('game.start')->with('status', 'Progress saved!');
+    }
+
+    public function resumeGame(Request $request)
+    {
+        // Retrieve the saved scene ID from session
+        $scene_id = $request->session()->get('current_scene', 1); // Default to scene 1 if not set
+
+        // Redirect to the scene
+        return redirect()->route('game.scene', ['id' => $scene_id]);
+    }
 }
 

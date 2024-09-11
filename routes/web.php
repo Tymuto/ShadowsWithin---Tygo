@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::get('/instructions', [GameController::class, 'showStartPage'])->name('game.start');
 Route::get('/game/{id}', [GameController::class, 'showScene'])->name('game.scene'); // Route to display a specific scene
 Route::get('/game/{scene_id}/hint', [GameController::class, 'showHint'])->name('game.hint'); // Route to get a hint for the scene
+Route::get('/save-progress/{scene_id}', [GameController::class, 'saveProgress'])->name('game.saveProgress');
+Route::get('/resume-game', [GameController::class, 'resumeGame'])->name('game.resumeGame');
